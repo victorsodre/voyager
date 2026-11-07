@@ -1,71 +1,39 @@
-# Arquitetura proposta
+# Arquitetura implementada
 
-Documento de planejamento. Nenhum comando de build ou teste existe ainda neste repositório.
+Aplicação estática React 19.2.6 + TypeScript 5.9.3 + Three.js 0.187.0 + Vite 8.3.6. Versões exatas no package.json/lockfile. Fontes locais; nenhum serviço remoto é necessário para renderizar a experiência depois do download dos arquivos estáticos.
 
-## Base
+## Responsabilidades
 
-React + TypeScript + Three.js + Vite, como referência do Fusquinha. Fixar versões e lockfile no início da implementação, após verificar compatibilidade atual e licença do código reaproveitado. Não adotar a versão antiga do Three apenas por cópia automática.
+| Arquivo | Responsabilidade |
+|---|---|
+| `src/App.tsx` | Seleção, isolamento, modo sonda/viagem, tour, diálogos e reset |
+| `src/content/catalog.ts` | IDs estáveis dos sete conjuntos, explicações e fontes |
+| `src/content/journey.ts` | Marcos históricos e previsão, com datas/fontes |
+| `src/content/partition.json` | Atribuição de cada triângulo a um conjunto, vinculada ao hash do GLB |
+| `src/scene/model.ts` | Carregamento, decodificação local e montagem dos conjuntos |
+| `src/scene/partition.ts` | Subconjuntos de triângulos, preservando atributos e pose mundial |
+| `src/scene/runtime.ts` | Câmera, seleção por raio, isolamento e renderização sob demanda |
+| `src/scene/camera.ts` | Enquadramento pelos vértices reais; evita espaços vazios da caixa da haste diagonal |
+| `src/scene/capture.ts` | Exportação com marca/crédito e restauração da câmera |
+| `src/simulation/journey.ts` | Progresso limitado, pausa, visibilidade e último marco |
+| `src/ui/Journey.tsx` | Esquema SVG e controles HTML da viagem |
+| `src/ui/Sources.tsx` | Fontes e licenças em diálogo nativo |
+| `src/styles.css` | Identidade e composição desktop/móvel |
 
-Aplicação estática executada no navegador do visitante. O MVP não requer LLM, backend nem GPU de produção permanentemente alocada. Modelagem e processamento de assets são tarefas separadas e delimitadas.
+## Invariantes
 
-## Organização sugerida
+Cada um dos 20.390 triângulos pertence exatamente a um conjunto. O GLB original não é modificado; agrupamento semântico não representa sequência de montagem. IDs e ordem da partição devem acompanhar o catálogo. Mudança do asset exige nova inspeção, não apenas atualizar o hash.
 
-```text
-src/
-  app/              composição da tela e estados de carregamento
-  scene/            cena, câmera, iluminação e renderização
-  interactions/     seleção, isolamento, corte e desmontagem
-  simulation/       estado determinístico do mecanismo educativo
-  content/          catálogo, explicações, vídeos e fontes
-  ui/               controles HTML acessíveis
-  styles/           tokens do ovictorlab e layout
-public/
-  models/           somente arquivos com entrega web autorizada
-  audio/            sons licenciados, carregados sob demanda
-  fonts/            fontes locais e respectivas licenças
-```
+`probe ↔ journey` conserva seleção, isolamento e câmera. A cena permanece montada, mas deixa de renderizar na viagem. Redimensionamento da vista oculta não reenquadra a sonda. Isolar guarda a pose anterior; sair do isolamento a restaura. Órbita sem inércia evita movimento residual ao trocar de modo.
 
-Criar só o que o piloto utilizar. Começar independente; extrair um pacote compartilhado depois que o segundo projeto comprovar reutilização concreta.
+A viagem dura aproximadamente 24 segundos quando acionada e percorre seis marcos em intervalos iguais; isso não representa o tempo histórico. Delta limitado a 0,1 segundo evita saltos após suspensão. Nenhuma animação começa sozinha; mudança para movimento reduzido interrompe a reprodução. Uma nova reprodução exige gesto.
 
-## Contratos
+## Desempenho e recursos
 
-- Peça: `id`, `label`, `groupId`, nós do modelo, pose de origem, descrição e referências. IDs estáveis entre atualizações.
-- Seleção: um catálogo determina o que pode ser selecionado; elementos auxiliares não capturam clique por acidente.
-- Desmontagem: transformação deriva de pose de origem e progresso 0–1; nunca acumula deslocamento a cada frame. Corte e desmontagem são modos distintos.
-- Mecanismo: estado serializável, limites explícitos, pausa e reset. Tempo de animação não depende de quantidade de frames.
-- Fontes: título, instituição/autor, URL, data de consulta, afirmação suportada e limite. Texto da interface aponta para esse catálogo.
-- Áudio: inicia após gesto, tem volume/mute e para com cena oculta ou mecanismo desligado.
+DPR máximo 1,5, teto de 30 fps durante mudança de câmera e renderização sob demanda quando parada. Aba oculta e modo viagem suspendem a cena. Draco usa um worker e arquivos locais. Fetch do GLB tem limite de 20 segundos; erros de carga e perda de WebGL oferecem viagem/fontes e recarga.
 
-## O que avaliar no Fusquinha
+Materiais/texturas originais são compartilhados entre subconjuntos; descarte libera geometrias, materiais, texturas, controles, observadores, worker e renderizador. React StrictMode foi exercitado sem canvas duplicado. Números medidos em VALIDACAO.md, sem equivalência presumida com um telefone físico.
 
-`src/VehicleScene.tsx`: renderização/câmera/seleção. `src/catalog.ts`: agrupamento. `src/layout.ts`: posições e enquadramento. `src/vehicle-rig.ts`: pivôs e articulação. `src/vehicle-sounds.ts`: áudio. `src/engine-motion.ts`: movimento e pausa. Esses arquivos são referências de implementação, não garantem uma biblioteca pronta para outros objetos.
+## Publicação
 
-Antes de copiar, conferir responsabilidades, licenças e dependências. Motor, material, cenário e GLB do Fusquinha não pertencem automaticamente ao novo projeto.
-
-## Orçamento inicial de desempenho
-
-Metas propostas a validar no primeiro protótipo, não resultados já medidos:
-
-- Cena em aproximadamente 30 fps durante interação no dispositivo móvel de referência registrado.
-- Renderização sob demanda quando parada; suspender trabalho em aba oculta.
-- Começar com DPR limitado a 1,5 no celular, texturas de 1K quando suficientes e cena progressiva. Ajustar por medição visual e de memória.
-- Buscar até 10 MB comprimidos para a primeira cena útil; qualquer exceção precisa de comparação antes/depois e carregamento progressivo.
-- Medir modelo, texturas, draw calls e tempo até o primeiro controle utilizável. Evitar simulação física genérica quando uma cinemática determinística explica o fenômeno.
-
-## Entrega futura
-
-Build estático com caminhos relativos ou base configurável; testar recarga direta e hospedagem em subpasta. Integração com ovictorlab.com pode usar rota ou link, a decidir quando houver aplicação pronta. Não alterar o site principal durante o desenvolvimento inicial.
-
-Captura PNG é uma possibilidade herdada do Fusquinha. Presets de câmera 16:9 e 9:16 e tour guiado são extensões planejadas; não estão implementados. Gravar vídeo exige validar o método de captura e sincronização do som.
-
-## Implementação específica
-
-Geometria: Avaliar o GLB oficial da NASA: nomes de nós, materiais, hierarquia e possibilidade de seleção. Separação artística não comprova desmontagem física; criar os grupos conforme evidência.
-
-Estado proposto: `overview ↔ instrument; overview ↔ journey; voltar sempre recupera a câmera anterior sem perder a seleção válida.`
-
-Invariantes que devem orientar código e testes:
-
-- O conteúdo identifica Voyager 1 ou 2 e não mistura trajetórias, instrumentos e datas entre elas.
-- Distância e situação da missão exibem data da fonte; nenhum contador falso de tempo real.
-- A trajetória informa quando distâncias e tamanhos não compartilham a mesma escala.
+Base `./`; verificação local inclui `/voyager/`. Publicar toda a pasta dist. Não existe deploy automático. O site principal e os assets do Fusquinha não foram alterados ou copiados. A referência do Fusquinha orientou controles de exploração; esta cena usa o asset NASA identificado.

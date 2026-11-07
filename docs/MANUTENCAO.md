@@ -1,37 +1,33 @@
 # Manutenção e validação
 
-## Antes de cada entrega
+## Antes de uma entrega
 
-- Conferir fonte/data das explicações e a distinção entre ilustração e medição.
-- Validar assets, créditos e termos, incluindo autorização para servir arquivos extraíveis no navegador.
-- Executar os checks que a aplicação realmente tiver; registrar comandos e resultado. Atualmente este repositório só contém documentos.
-- Revisar diff, evitar segredos e incluir apenas mudanças da tarefa. Não adicionar diretórios de configuração pessoal, tokens ou snapshots de sessão.
-- Testar URL de vídeo, acesso às fontes, carregamento, fallback e navegação por teclado.
-- Conferir visualmente 1440×900, 390×844 e orientação horizontal; usar ao menos um navegador desktop e um celular real quando disponível. Registrar dispositivo e limitações.
-- Exercitar selecionar → isolar → reenquadrar → cortar/desmontar → montar → reset. Câmera deve conservar o objeto visível.
-- Testar mecanismo no início, meio, fim, pausa, retomada, reset e alternância de aba. Ausência de NaN e poses acumuladas é critério funcional.
-- Comparar captura inicial, seleção, corte e desmontagem com o guia visual. Validar som desligado e movimento reduzido.
+```sh
+npm ci --ignore-scripts
+npm run check
+npm test
+npm run build
+npm run preview
+```
 
-## Testes proporcionais
+Revisar diff, crédito NASA, licenças e texto pt-BR. Nenhuma credencial é necessária. Não versionar output, dist, node_modules, sessões do navegador ou configurações pessoais.
 
-Unitários para o estado do mecanismo, limites e transforms quando forem implementados. Integração para catálogo/nós do asset e retorno ao estado inicial. Fluxo de navegador para carregar, interagir e resetar. Não criar testes que apenas repitam o texto destes guias.
+No navegador, testar carga inicial, sete conjuntos, clique na geometria/lista, busca, isolar/voltar, câmera, malha, tour, reset e ambos os PNGs. Girar a sonda, mudar para viagem e voltar: pose e seleção devem permanecer. No celular, conferir diálogo, detalhe abaixo da cena, orientação horizontal e ausência de sobreposição. Referências: desktop 1440×980, móvel 390×844 e horizontal 844×390. Testar também em aparelho físico antes de divulgar desempenho móvel.
 
-## Rotina após lançamento
+Na viagem, conferir os seis marcos, previsão explícita, fonte por marco, barra por teclado, reprodução/pausa/fim/reset e movimento reduzido. O percurso não é temporalmente proporcional. Falhas de modelo/WebGL devem deixar viagem e fontes acessíveis; recarga deve recuperar a cena.
 
-- A cada mudança de modelo: revisar IDs, pivôs, nomes, enquadramento, memória e créditos.
-- A cada mudança de dependência: repetir build e fluxos essenciais; comparar imagens antes/depois.
-- A cada mudança factual: atualizar a fonte e textos, incluindo capturas/posts ainda não publicados.
-- Em revisão periódica: conferir links, disponibilidade de vídeos e situação das fontes. Datas dinâmicas, especialmente Voyager, exigem reconsulta explícita.
-- Registrar bug com dispositivo, navegador, ação, resultado esperado/observado e evidência sem dados pessoais.
+Capturas de página inteira no Chrome podem esvaziar temporariamente o framebuffer de uma cena sob demanda quando o viewport é alterado pela própria ferramenta. Confirmar a carga real com captura da tela visível antes de concluir que a cena está vazia. Os PNGs do aplicativo renderizam explicitamente e restauram a câmera.
+
+## Alterar conteúdo e geometria
+
+Datas e marcos: `src/content/journey.ts`. Atualização de contexto: também `project.ts` e texto de contexto em `ui/Journey.tsx`. **Antes de divulgar depois de 18/11/2026, reconferir a previsão de um dia-luz em uma atualização NASA**; o tempo passar não comprova o evento. Preservar a data da fonte, a origem da distância (Terra ou Sol) e a distinção entre função original e instrumento ativo.
+
+Modelo: seguir GEOMETRIA.md. Não substituir o GLB mantendo a partição antiga. Após mudar decoder/Three, regenerar, comparar manifesto e imagens de todos os grupos. Fontes/identidade: seguir IDENTIDADE-VISUAL.md e conferir créditos no PNG, além da interface.
+
+Dependências: atualizar de forma deliberada, com lockfile, build, testes e fluxo visual. O bundle inclui Three/GLTFLoader e gera aviso de tamanho; avaliar a transferência efetiva e experiência de rede antes de adicionar ferramentas ou assets.
 
 ## Publicação e reversão
 
-Publicar aplicativo é uma etapa futura. Preparar build revisável, checks e URL alvo; confirmar que o pedido vigente autoriza o deploy. Não habilitar publicação automática apenas porque a documentação foi enviada ao GitHub.
+A entrega é local e em repositório privado, sem URL pública do aplicativo. Deploy depende do pedido vigente. Publicar a pasta dist inteira e verificar em raiz/subpasta, recarga e recursos locais. Registrar commit, URL e data. Reverter por novo deploy da versão anterior; não reescrever histórico compartilhado. Visibilidade do repositório é decisão separada.
 
-Quando houver deploy, registrar commit, build, URL, data e verificação do caminho público. Manter release anterior para reversão por novo deploy; não reescrever histórico compartilhado. Mudança de visibilidade do repositório é independente de publicar o aplicativo.
-
-## Medição do piloto
-
-Se a medição for implementada e autorizada, observar em 7 e 28 dias: visitas à experiência, primeira interação, uso da ação principal e cliques para o vídeo. Evitar coletar placas, imagens pessoais ou identificadores desnecessários. Views dos vídeos não medem uso do aplicativo.
-
-Usar a combinação de qualidade, uso e custo de manutenção para ajustar o próximo projeto. Não prometer crescimento ou patrocínio com base no alcance histórico.
+POSTAGENS-X.md contém rascunhos, sem envio automático. Só usar texto de lançamento depois de validar uma URL acessível ao público. Métricas da aplicação não foram implementadas; não inferir sucesso pelas views dos vídeos.

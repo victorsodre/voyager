@@ -12,10 +12,10 @@ Quero levar a Voyager para o mesmo formato do Fusquinha: girar a sonda, selecion
 
 ## Bastidor
 
-Condição/mídia: Usar somente depois de existir o protótipo descrito. Anexar captura real da interação; ajustar o texto ao que efetivamente funcionar.
+Condição/mídia: Aplicação verificada localmente em 07/11/2026. Anexar captura real; este texto não anuncia um link público.
 
 ```text
-A Voyager parece uma peça só até você começar a explorar seus instrumentos. Neste protótipo, cada conjunto abre uma explicação. A vista da viagem fica separada para não confundir o tamanho da sonda com as distâncias do espaço.
+O modelo da Voyager da NASA virou uma experiência do ovictorlab: sete conjuntos para explorar, isolar e entender. A viagem tem sua própria vista, com datas e fontes. Já está funcionando localmente; falta a etapa de publicação.
 ```
 
 ## Lançamento

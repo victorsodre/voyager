@@ -1,0 +1,40 @@
+{
+  "source": "https://science.nasa.gov/3d-resources/voyager-probe-b/",
+  "author": "NASA/Michael D. Carbajal",
+  "consulted": "2026-11-07",
+  "sha256": "bd86ded828dd3f459293aee4ffc3cd0998d8db67439317c8299650a1174c3289",
+  "bytes": 1720864,
+  "extensions": [
+    "KHR_draco_mesh_compression",
+    "EXT_texture_webp"
+  ],
+  "nodes": [
+    {
+      "name": "tex_01",
+      "mesh": 0,
+      "children": []
+    },
+    {
+      "name": "tex_02_AO",
+      "mesh": 1,
+      "children": []
+    },
+    {
+      "name": "tex_02_AO_dark",
+      "mesh": 2,
+      "children": []
+    },
+    {
+      "name": "_root",
+      "mesh": 3,
+      "children": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "meshCount": 4,
+  "imageCount": 4,
+  "externalResources": false
+}

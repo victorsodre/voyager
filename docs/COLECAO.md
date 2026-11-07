@@ -1,6 +1,6 @@
 # Coleção de experiências interativas — ovictorlab
 
-Planejamento de 07/11/2026. Dez projetos independentes; documentação inicial, sem aplicação implementada ou publicada nesta entrega.
+Coleção de 07/11/2026. Desenvolvimento dos dez projetos autorizado por Victor. Caminhão, oleoduto e Voyager concluídos localmente; sem deploy público. Esta cópia registra o marco da Voyager; o acompanhamento canônico está em /Users/victor/ovictor/PROGRESSO-INTERATIVOS.md.
 
 O produto combina a identidade de ovictorlab.com com exploração, seleção, isolamento, desmontagem, movimento e som inspirados no Fusquinha. A ordem abaixo é uma recomendação, não um cronograma contratado.
 
@@ -8,7 +8,7 @@ O produto combina a identidade de ovictorlab.com com exploração, seleção, is
 |---|---|---|---|
 | 1 | Caminhão de lixo por dentro | [caminhao-lixo](https://github.com/victorsodre/caminhao-lixo) | Médio/alto: depende de encontrar ou modelar um compactador articulável. |
 | 2 | Oleoduto: combustíveis no mesmo tubo | [oleoduto](https://github.com/victorsodre/oleoduto) | Médio: modelagem procedural simples; maior atenção às regras do fluxo. |
-| 3 | Voyager explorável | [voyager](https://github.com/victorsodre/voyager) | Médio: existe GLB oficial, mas sua adequação à seleção ainda precisa ser verificada. |
+| 3 | Voyager explorável | [voyager](https://github.com/victorsodre/voyager) | Modelo NASA agrupado em sete conjuntos e viagem implementada; cinco testes aprovados. |
 | 4 | Tatuzão construindo o metrô | [tatuzao](https://github.com/victorsodre/tatuzao) | Alto: conjuntos mecânicos e sequência precisam ser coerentes com um tipo real. |
 | 5 | Motor por dentro | [motor-por-dentro](https://github.com/victorsodre/motor-por-dentro) | Médio/alto: rig cinemático e apuração técnica são o núcleo. |
 | 6 | Amazonas em camadas | [amazonas-em-camadas](https://github.com/victorsodre/amazonas-em-camadas) | Alto: pesquisa e dados podem limitar a precisão e o escopo. |
@@ -24,7 +24,7 @@ O produto combina a identidade de ovictorlab.com com exploração, seleção, is
 3. Voyager: seleção de instrumentos e expansão para astronomia.
 4. Reavaliar os demais com resultados do piloto e disponibilidade de modelos/dados.
 
-Não trabalhar nos dez aplicativos ao mesmo tempo. O trabalho autorizado nesta rodada é a documentação, seu envio ao GitHub e o registro no VicMind. Desenvolvimento, site no ar e posts no X são etapas posteriores.
+Desenvolver em sequência e manter todos os dez no escopo. A meta posterior de Victor autorizou a implementação completa; deploy e posts no X continuam etapas separadas.
 
 ## Evidência e limites
 

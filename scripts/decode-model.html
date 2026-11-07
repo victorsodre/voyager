@@ -1,0 +1,14 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>Inventário do modelo NASA</title><h1>Inventário geométrico da Voyager</h1><p>Ferramenta local de manutenção. Baixa um JSON da geometria original decodificada, sem alterar o GLB.</p><button id="export">Exportar geometria</button><output id="status"></output><script type="module">
+import {Mesh} from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js';
+document.querySelector('#export').onclick=async()=>{
+ const button=document.querySelector('button'),status=document.querySelector('output');button.disabled=true;status.textContent=' Decodificando…';
+ const draco=new DRACOLoader().setDecoderPath('/draco/').setWorkerLimit(1);
+ try{
+  const data=await new GLTFLoader().setDRACOLoader(draco).loadAsync('/models/voyager-nasa.glb');data.scene.updateMatrixWorld(true);const meshes=[];
+  data.scene.traverse(o=>{if(o instanceof Mesh){const attributes={};for(const [name,a] of Object.entries(o.geometry.attributes))attributes[name]={array:Array.from(a.array),itemSize:a.itemSize,normalized:a.normalized};meshes.push({name:o.name,attributes,index:Array.from(o.geometry.index.array),matrix:o.matrixWorld.toArray()});}});
+  const url=URL.createObjectURL(new Blob([JSON.stringify(meshes)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='voyager-decoded.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent=` ${meshes.length} meshes exportadas.`;
+ }catch(e){status.textContent=' Falha: '+e.message;}finally{draco.dispose();button.disabled=false;}
+};
+</script></html>

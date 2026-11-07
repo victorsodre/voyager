@@ -15,11 +15,11 @@ Exploração da sonda com antena e instrumentos selecionáveis, seguida de um pe
 - Fontes de energia
 - Disco e contexto da missão
 
-Esses grupos são uma proposta semântica; validar sua correspondência com a geometria e as fontes antes de nomear peças como reais.
+Grupos implementados em sete IDs estáveis, validados contra a geometria original e o diagrama NASA/JPL; detalhes em GEOMETRIA.md. Instrumentos são conjuntos funcionais, sem alegar desmontagem física.
 
 ## Ações principais
 
-| Controle | Comportamento planejado |
+| Controle | Comportamento implementado |
 |---|---|
 | Explorar instrumentos | Seleciona uma parte e apresenta sua função com fonte. |
 | Isolar conjunto | Enquadra a peça e permite voltar à sonda inteira. |

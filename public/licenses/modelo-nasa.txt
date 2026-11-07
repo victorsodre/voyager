@@ -1,0 +1,14 @@
+Voyager Probe (B) — NASA / Michael D. Carbajal
+Fonte: https://science.nasa.gov/3d-resources/voyager-probe-b/
+Publicado em 18/04/2025. Consultado em 07/11/2026.
+Termos: https://www.nasa.gov/nasa-brand-center/images-and-media/
+
+Uso educativo e informativo com atribuição. NASA não endossa este projeto.
+O crédito do modelo permanece separado da marca e autoria editorial ovictorlab.
+O GLB original foi preservado. Em execução, triângulos inteiros são reunidos
+em sete conjuntos semânticos para seleção; não se afirma uma desmontagem física.
+Não distribuímos áudios, músicas nem o conteúdo integral do Golden Record.
+
+Arquivo: models/voyager-nasa.glb
+Tamanho: 1720864 bytes
+SHA-256: bd86ded828dd3f459293aee4ffc3cd0998d8db67439317c8299650a1174c3289
