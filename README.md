@@ -10,6 +10,16 @@ Gire o modelo oficial da NASA, selecione um dos sete conjuntos, isole e aproxime
 
 Direção editorial: **Victor Sodré / ovictorlab**. [Site](https://ovictorlab.com/) · [Referência Fusquinha](https://victorsodre.github.io/fusquinha/) · [Repositório](https://github.com/victorsodre/voyager).
 
+## Entenda no vídeo
+
+<a href="https://www.youtube.com/watch?v=PyF4PO5zPpk"><img src="public/video-thumbnail.jpg" width="480" alt="Assistir: Onde termina o sistema solar? (a Voyager 1 ainda não chegou lá)" /></a>
+
+**[Onde termina o sistema solar? (a Voyager 1 ainda não chegou lá)](https://www.youtube.com/watch?v=PyF4PO5zPpk)**
+
+Do lançamento aos limites do sistema solar: acompanhe a explicação e volte à sonda para conhecer seus instrumentos.
+
+O player incorporado fica [na página do experimento](https://victorsodre.github.io/voyager/#video), com carregamento por clique e sem reprodução automática.
+
 ## Rodar e verificar
 
 Node.js 22.18 ou superior. Versões e lockfile fixados; execução validada com Node 26.7.0 e npm 11.19.0.

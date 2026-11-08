@@ -35,3 +35,7 @@ Meta de Victor: desenvolver os dez projetos até completar seus escopos. Voyager
 ## 2026-11-08 — repositório público e GitHub Pages
 
 Victor autorizou aprimorar e tornar públicos os dez projetos com HTML funcional e identidade oficial. Esta decisão substitui a restrição histórica de publicação acima. Incluídos navegação entre os dez sites, canonical/OG/X, prévia real, sitemap, página 404, verificação de caminhos e workflow com testes/build antes do deploy. URL: https://victorsodre.github.io/voyager/. Conteúdo e modelo educativo preservados; nenhum post enviado ao X. Procedimento e reversão em PUBLICACAO.md.
+
+## 2026-11-08 — vídeo do canal incorporado
+
+Pedido de Victor: embed abaixo do experimento e thumbnail clicável no README. Vídeo `PyF4PO5zPpk`, autoria ovictorlab confirmada pelo oEmbed público. Do lançamento aos limites do sistema solar: acompanhe a explicação e volte à sonda para conhecer seus instrumentos. Player `youtube-nocookie.com`, criado só por clique, `autoplay=0`, controles nativos, referrer de origem e link direto sempre disponível. Capa local para não carregar o YouTube na abertura; layout landscape. Cabeçalho leva à seção `#video`. Identidade preservada; nenhum upload ou alteração de vídeo no canal.
