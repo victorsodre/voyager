@@ -28,6 +28,4 @@ Dependências: atualizar de forma deliberada, com lockfile, build, testes e flux
 
 ## Publicação e reversão
 
-A entrega é local e em repositório privado, sem URL pública do aplicativo. Deploy depende do pedido vigente. Publicar a pasta dist inteira e verificar em raiz/subpasta, recarga e recursos locais. Registrar commit, URL e data. Reverter por novo deploy da versão anterior; não reescrever histórico compartilhado. Visibilidade do repositório é decisão separada.
-
-POSTAGENS-X.md contém rascunhos, sem envio automático. Só usar texto de lançamento depois de validar uma URL acessível ao público. Métricas da aplicação não foram implementadas; não inferir sucesso pelas views dos vídeos.
+A publicação foi autorizada por Victor em 08/11/2026. O procedimento vigente, os checks, a URL e a reversão estão em [PUBLICACAO.md](PUBLICACAO.md). Pushes em `main` passam a publicar pelo workflow após validação.

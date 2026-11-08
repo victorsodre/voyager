@@ -55,3 +55,11 @@ A troca de modo redimensionava a vista oculta e alterava a câmera. O resize ago
 - A geometria tem autoria NASA/Michael D. Carbajal; a identificação funcional é educativa e não valida dimensões/engenharia para fabricação.
 - Fontes datadas em 07/11/2026; previsão futura exige reconsulta antes de divulgação posterior. Sem telemetria, áudio, corte ou desmontagem.
 - Aplicativo validado localmente; tornar disponível na web e publicar no X são ações posteriores.
+
+## Revisão para publicação — 08/11/2026
+
+Testes automatizados do projeto, TypeScript/build e `check:pages` aprovados. O último verifica assets relativos em subpasta, canonical, prévia social, 404, sitemap e fallback sem JavaScript. O conjunto mantém 76 testes dos mecanismos.
+
+Chrome real em janela dedicada: build servido sob a subpasta do projeto, canvas e catálogo carregados, seleção, ação principal quando presente no dock, diálogo da coleção com dez destinos corretos, indicação da página atual, fechamento por Escape, foco devolvido e seleção preservada. Viewports 1440×1000 e 390×844, sem transbordamento horizontal, erros de JavaScript ou respostas HTTP de erro durante o fluxo. Capturas reais em `output/publish-local-*.png` (ignoradas pelo Git).
+
+A publicação usa o procedimento em [PUBLICACAO.md](PUBLICACAO.md). Verificação local não substitui conferir a URL após o deploy. Celular físico e Safari permanecem fora da amostra; o modelo mantém os limites educativos descritos acima.

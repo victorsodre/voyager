@@ -31,3 +31,7 @@ Meta de Victor: desenvolver os dez projetos até completar seus escopos. Voyager
 - Identidade aplicada, tour, malha e PNG nos dois formatos. Sem corte, desmontagem ou som: não acrescentariam informação tecnicamente sustentada ao recorte.
 - Verificação de navegador corrigiu reenquadramento por resize da vista oculta e movimento residual da câmera. Contexto das fontes passou a ocupar fluxo natural para não ficar cortado no rodapé.
 - Comandos e medições em README/VALIDACAO.md. Pendências técnicas iniciais resolvidas para este escopo. Publicação e divulgação permanecem externas à implementação; nenhum post enviado.
+
+## 2026-11-08 — repositório público e GitHub Pages
+
+Victor autorizou aprimorar e tornar públicos os dez projetos com HTML funcional e identidade oficial. Esta decisão substitui a restrição histórica de publicação acima. Incluídos navegação entre os dez sites, canonical/OG/X, prévia real, sitemap, página 404, verificação de caminhos e workflow com testes/build antes do deploy. URL: https://victorsodre.github.io/voyager/. Conteúdo e modelo educativo preservados; nenhum post enviado ao X. Procedimento e reversão em PUBLICACAO.md.

@@ -1,6 +1,8 @@
 # Voyager 1 explorável
 
-> **Desenvolvimento concluído e validado localmente em 07/11/2026.** Aplicação estática pronta para revisão; sem deploy público. Evidências e limitações em [VALIDACAO.md](docs/VALIDACAO.md).
+**[Abrir a experiência →](https://victorsodre.github.io/voyager/)** · [Os 10 experimentos](docs/COLECAO.md) · [Publicação e manutenção](docs/PUBLICACAO.md)
+
+[![Voyager 1 — captura real da experiência](public/share.png)](https://victorsodre.github.io/voyager/)
 
 **O que a Voyager carrega e até onde sua viagem chegou?**
 
