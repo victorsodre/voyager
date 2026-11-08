@@ -62,4 +62,4 @@ A viagem é um esquema cronológico sem escala orbital ou temporal. Identifica V
 
 [Reel sobre o Sistema Solar](https://www.instagram.com/reel/DeJ2_AOKGiG/): 101.418 visualizações. [Vídeo longo da Voyager](https://www.youtube.com/watch?v=PyF4PO5zPpk): 1.085 visualizações; relatório de 06/11/2026 registrou 47,72% de duração média assistida. Consulta em 07/11. São conteúdos distintos do mesmo tema; suas métricas não comprovam uso deste aplicativo.
 
-Próxima etapa externa: escolher e autorizar a hospedagem, verificar a URL pública e então adaptar os rascunhos de divulgação. Nenhuma postagem foi enviada.
+Aplicação publicada no GitHub Pages, com vídeo incorporado e links conferidos. Os rascunhos de divulgação permanecem em [POSTAGENS-X.md](POSTAGENS-X.md), para publicação manual por Victor.
