@@ -2,12 +2,12 @@
 
 Rascunhos para Victor publicar posteriormente. **Nada foi enviado.** Público: pessoas curiosas sobre engenharia/ciência e quem acompanha a construção dos projetos. Um assunto por post, sem métricas privadas ou promessa de data.
 
-## Planejamento
+## Apresentação do projeto
 
-Condição/mídia: Pode ser usado para anunciar a intenção. Mostrar esquema identificado como plano ou referência do Fusquinha.
+Condição/mídia: Versão local concluída. Anexar captura real; o texto não anuncia uma URL pública.
 
 ```text
-Quero levar a Voyager para o mesmo formato do Fusquinha: girar a sonda, selecionar instrumentos e descobrir o que cada parte faz. O plano do experimento já está organizado. Primeiro, vou conferir o modelo e as fontes da missão.
+A Voyager 1 virou uma experiência 3D do ovictorlab, com modelo da NASA: girar a sonda, selecionar sete conjuntos e conhecer suas funções. A viagem tem marcos datados e fontes. A versão local está pronta; ainda sem link público.
 ```
 
 ## Bastidor
