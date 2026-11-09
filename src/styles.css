@@ -246,6 +246,7 @@ dialog::backdrop{background:#050713c9;backdrop-filter:blur(7px)}
  .sources-dialog{padding:22px}
  .sources-dialog h2{font-size:28px}
  .parts-dialog{margin:auto auto 12px;max-height:80svh}
+ .part-row{height:48px}
  .parts-dialog .part-row strong{font-size:14px}
  .parts-dialog .search input{font-size:16px}
 }
