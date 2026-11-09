@@ -2,7 +2,7 @@
 
 **[Abrir a experiência →](https://victorsodre.github.io/voyager/)** · [Os 10 experimentos](docs/COLECAO.md) · [Publicação e manutenção](docs/PUBLICACAO.md)
 
-[![Voyager 1 — captura real da experiência](public/share.png)](https://victorsodre.github.io/voyager/)
+[![Voyager 1 — captura real da experiência](public/share.jpg)](https://victorsodre.github.io/voyager/)
 
 **O que a Voyager carrega e até onde sua viagem chegou?**
 

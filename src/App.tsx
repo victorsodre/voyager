@@ -1,8 +1,9 @@
-import { VideoSection } from './ui/VideoSection.tsx';
-import { CollectionNav } from './ui/CollectionNav.tsx';
+import { video } from './content/video.ts';
+import { VideoSection } from './kit/VideoSection.tsx';
+import { CollectionNav } from './kit/CollectionNav.tsx';
 import { useCallback,useEffect,useRef,useState } from 'react';
 import { ArrowLeft,ArrowRight,ArrowUpRight,Box,ChevronRight,Download,Focus,Layers3,Maximize,Minus,Plus,RotateCcw,Search,X,Route } from 'lucide-react';
-import { Brand } from './ui/Brand.tsx';
+import { Brand } from './kit/Brand.tsx';
 import { Sources } from './ui/Sources.tsx';
 import { Journey } from './ui/Journey.tsx';
 import { project } from './content/project.ts';
@@ -40,6 +41,6 @@ export function App(){
  {current&&<section ref={inspector} className="inspector" aria-label="Conjunto selecionado"><div className="inspector-top"><span className="eyebrow">{tour===null?'EM DETALHE':`CONHEÇA A SONDA · ${tour+1}/7`}</span><button className="icon-button" aria-label="Fechar detalhe" onClick={()=>select(null)}><X size={16}/></button></div><h2>{current.label}</h2><p>{current.detail}</p><small>{current.note}</small><a className="part-source" href={current.source} target="_blank" rel="noreferrer">Consultar a fonte <ArrowUpRight size={12}/></a><div className="inspector-actions"><button aria-pressed={isolated} onClick={()=>setIsolated(v=>!v)}><Layers3 size={14}/>{isolated?'Ver sonda inteira':'Isolar'}</button><button onClick={()=>scene.current?.focus(current.id)}><Focus size={14}/>Aproximar</button></div>{tour!==null&&<div className="inspector-actions"><button disabled={tour===0} onClick={()=>guide(tour-1)}><ArrowLeft size={14}/>Anterior</button><button onClick={()=>tour<6?guide(tour+1):setTour(null)}>{tour<6?'Próximo conjunto':'Concluir'}<ArrowRight size={14}/></button></div>}</section>}
  <div className="mobile-actions"><button disabled={!parts.length} onClick={()=>setDrawer(true)}><Layers3 size={16}/>Conjuntos <span>{parts.length||7}</span></button><button disabled={!parts.length} onClick={()=>guide(0)}>Conhecer a sonda <ArrowRight size={16}/></button></div>
  <section className="probe-dock"><div><p className="eyebrow">A ENGENHARIA DE UMA LONGA VIAGEM</p><p>Toque em um conjunto para descobrir sua função.</p></div><button className="primary" onClick={()=>changeMode('journey')}><Route size={16}/>Ver a viagem</button><button className="icon-button" aria-label="Reiniciar experiência" onClick={reset}><RotateCcw size={18}/></button></section></>:<Journey progress={progress} playing={playing} setProgress={setProgress} setPlaying={setPlaying}/>}
- </main><VideoSection/><footer><span>UM EXPERIMENTO DO OVICTORLAB <i>© 2026</i></span><button onClick={()=>setSources(true)}>Modelo NASA · Fontes e créditos <ArrowUpRight size={13}/></button><CollectionNav current="voyager"/></footer><Sources open={sources} onClose={()=>setSources(false)}/>
+ </main><VideoSection video={video}/><footer><span>UM EXPERIMENTO DO OVICTORLAB <i>© 2026</i></span><button onClick={()=>setSources(true)}>Modelo NASA · Fontes e créditos <ArrowUpRight size={13}/></button><CollectionNav current="voyager"/></footer><Sources open={sources} onClose={()=>setSources(false)}/>
  <dialog ref={dialog} className="parts-dialog" aria-label="Conjuntos da Voyager 1" onClose={()=>setDrawer(false)}><div className="dialog-top"><span className="eyebrow">CONHEÇA A SONDA</span><button className="icon-button" aria-label="Fechar conjuntos" onClick={()=>setDrawer(false)}><X size={18}/></button></div>{renderParts()}</dialog><span className="sr-only" role="status" aria-live="polite">{notice}</span></div>;
 }
