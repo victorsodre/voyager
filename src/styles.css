@@ -204,6 +204,11 @@ dialog::backdrop{background:#050713c9;backdrop-filter:blur(7px)}
  .journey-detail h2{font-size:29px}
  .milestone-buttons button{font-size:11px;padding:12px 3px 0}
 }
+/* Around 800–845 px the dock wraps to four lines (141 px); hint and scene rise above it. */
+@media(max-width:860px) and (min-width:761px){
+ .scene-host{bottom:204px}
+ .orbit-hint{bottom:186px}
+}
 
 /* Phone: a single column; nothing floats over the probe and no label goes below 11 px. */
 @media(max-width:760px){
