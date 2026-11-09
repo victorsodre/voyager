@@ -1,7 +1,8 @@
 import * as T from 'three';
 import { fitPoints } from './camera.ts';
 
-export function saveSceneImage(renderer: T.WebGLRenderer, scene: T.Scene, camera: T.PerspectiveCamera, points: T.Vector3[], portrait = false) {
+/** `prepare` hides interface-only states (selection dimming) and returns how to restore them. */
+export function saveSceneImage(renderer: T.WebGLRenderer, scene: T.Scene, camera: T.PerspectiveCamera, points: T.Vector3[], portrait = false, prepare: () => () => void = () => () => {}) {
   const width = portrait ? 1080 : 1920, height = portrait ? 1920 : 1080;
   const heading = portrait ? 250 : 150, footer = 100, sceneHeight = height - heading - footer;
   const size = renderer.getSize(new T.Vector2()), ratio = renderer.getPixelRatio(), aspect = camera.aspect;
@@ -9,6 +10,7 @@ export function saveSceneImage(renderer: T.WebGLRenderer, scene: T.Scene, camera
   const direction = camera.getWorldDirection(new T.Vector3()).negate();
   const output = document.createElement('canvas'); output.width = width; output.height = height;
   const ctx = output.getContext('2d'); if (!ctx) throw new Error('Não foi possível preparar a imagem.');
+  const restore = prepare();
   try {
     renderer.setPixelRatio(1); renderer.setSize(width, sceneHeight, false);
     camera.aspect = width / sceneHeight; fitPoints(camera, points, direction);
@@ -22,7 +24,7 @@ export function saveSceneImage(renderer: T.WebGLRenderer, scene: T.Scene, camera
     ctx.fillStyle = '#f1f2f8'; ctx.font = '34px "Archivo Black", sans-serif'; ctx.fillText('ovictorlab', 108, 72);
     ctx.font = `${portrait ? 56 : 44}px Anton, sans-serif`; ctx.fillText('VOYAGER 1 · ALÉM DA HELIOSFERA', 50, portrait ? 174 : 130);
     ctx.fillStyle = '#a9aecb'; ctx.font = '22px Archivo, sans-serif'; ctx.fillText('Modelo: NASA / Michael D. Carbajal', 50, height - 53);
-    ctx.textAlign = 'right'; ctx.fillStyle = '#ffd21f'; ctx.fillText('ovictorlab.com', width - 50, height - 53);
+    ctx.textAlign = 'right'; ctx.fillStyle = '#ffd21f'; ctx.fillText('@ovictorlab · ovictorlab.com', width - 50, height - 53);
     output.toBlob(blob => {
       if (!blob) return;
       const url = URL.createObjectURL(blob), link = document.createElement('a');
@@ -30,6 +32,7 @@ export function saveSceneImage(renderer: T.WebGLRenderer, scene: T.Scene, camera
       setTimeout(() => URL.revokeObjectURL(url), 1000);
     });
   } finally {
+    restore();
     renderer.setPixelRatio(ratio); renderer.setSize(size.x, size.y, false);
     camera.aspect = aspect; camera.position.copy(position); camera.quaternion.copy(quaternion); camera.updateProjectionMatrix();
     renderer.render(scene, camera);

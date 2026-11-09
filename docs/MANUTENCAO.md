@@ -14,13 +14,13 @@ Revisar diff, crédito NASA, licenças e texto pt-BR. Nenhuma credencial é nece
 
 No navegador, testar carga inicial, sete conjuntos, clique na geometria/lista, busca, isolar/voltar, câmera, malha, tour, reset e ambos os PNGs. Girar a sonda, mudar para viagem e voltar: pose e seleção devem permanecer. No celular, conferir diálogo, detalhe abaixo da cena, orientação horizontal e ausência de sobreposição. Referências: desktop 1440×980, móvel 390×844 e horizontal 844×390. Testar também em aparelho físico antes de divulgar desempenho móvel.
 
-Na viagem, conferir os seis marcos, previsão explícita, fonte por marco, barra por teclado, reprodução/pausa/fim/reset e movimento reduzido. O percurso não é temporalmente proporcional. Falhas de modelo/WebGL devem deixar viagem e fontes acessíveis; recarga deve recuperar a cena.
+Na viagem, conferir os seis marcos, texto do dia-luz coerente com a data, fonte por marco, barra por teclado, reprodução/pausa/fim/reset e movimento reduzido. O percurso não é temporalmente proporcional. Falhas de modelo/WebGL devem deixar viagem e fontes acessíveis; recarga deve recuperar a cena.
 
 Capturas de página inteira no Chrome podem esvaziar temporariamente o framebuffer de uma cena sob demanda quando o viewport é alterado pela própria ferramenta. Confirmar a carga real com captura da tela visível antes de concluir que a cena está vazia. Os PNGs do aplicativo renderizam explicitamente e restauram a câmera.
 
 ## Alterar conteúdo e geometria
 
-Datas e marcos: `src/content/journey.ts`. Atualização de contexto: também `project.ts` e texto de contexto em `ui/Journey.tsx`. **Antes de divulgar depois de 18/11/2026, reconferir a previsão de um dia-luz em uma atualização NASA**; o tempo passar não comprova o evento. Preservar a data da fonte, a origem da distância (Terra ou Sol) e a distinção entre função original e instrumento ativo.
+Datas e marcos: `src/content/journey.ts`. Atualização de contexto: também `project.ts` e texto de contexto em `ui/Journey.tsx`. O texto do dia-luz muda sozinho pela data (`src/simulation/lightDay.ts`): antes do instante calculado pela NASA, previsão; depois, "por volta de 18/11/2026". Se a NASA publicar data diferente, atualizar `LIGHT_DAY_AT`, os textos e o teste. Instrumentos ligados (`status` em `catalog.ts`) seguem o post de 17/04/2026; reconferir a cada atualização da NASA. Preservar a data da fonte, a origem da distância (Terra ou Sol) e a distinção entre função original e instrumento ativo.
 
 Modelo: seguir GEOMETRIA.md. Não substituir o GLB mantendo a partição antiga. Após mudar decoder/Three, regenerar, comparar manifesto e imagens de todos os grupos. Fontes/identidade: seguir IDENTIDADE-VISUAL.md e conferir créditos no PNG, além da interface.
 

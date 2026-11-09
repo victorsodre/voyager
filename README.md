@@ -38,12 +38,12 @@ npm run preview
 ## Implementado
 
 - Sete conjuntos reais: antena, corpo, plataforma científica, magnetômetro, RTGs, antenas de plasma e capa do disco dourado.
-- Órbita, zoom, seleção por clique/lista, busca, isolamento, aproximação e reset.
+- Órbita, zoom (Ctrl + rolagem ou dois dedos), seleção por clique/lista, busca, isolamento, aproximação e reset. A rolagem da página não fica presa no 3D.
 - Tour da sonda, malha e exportação PNG em 1920×1080 ou 1080×1920, com créditos.
 - Viagem por seis marcos, com passos, reprodução, pausa, barra de progresso e fontes.
 - Interface pt-BR responsiva, teclado, movimento reduzido e fallback de rede/WebGL.
 
-A viagem é um esquema cronológico sem escala orbital ou temporal. Identifica Voyager **1**; Urano/Netuno pertencem à rota da Voyager 2. A informação de um dia-luz é uma **previsão publicada para 18/11/2026**, consultada em 07/11; não é telemetria. Não há desmontagem fictícia, interior inventado ou áudio automático.
+A viagem é um esquema cronológico sem escala orbital ou temporal. Identifica Voyager **1**; Urano/Netuno pertencem à rota da Voyager 2. O marco de um dia-luz usa a data calculada pela NASA (**18/11/2026**): até lá aparece como previsão; depois, como "por volta de 18/11/2026". Não é telemetria. Magnetômetro e antenas de ondas de plasma aparecem como **ainda ligados**, conforme a NASA em 17/04/2026. Não há desmontagem fictícia, interior inventado ou áudio automático.
 
 ## Modelo e créditos
 

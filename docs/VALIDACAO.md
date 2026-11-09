@@ -73,3 +73,7 @@ Fluxo a conferir após cada publicação: abrir pelo cabeçalho, capa legível, 
 Nesta rodada, os dez players foram carregados no Chrome em estado pronto (`5` / cued), com o ID esperado e sem reprodução automática. Navegação pelo cabeçalho, clique/Enter, dimensões mínimas, thumbnail local e link direto aprovados; nenhuma requisição ao YouTube antes do clique ou erro JavaScript nos fluxos.
 
 O mesmo fluxo passou nas dez URLs públicas do GitHub Pages em 08/11/2026: player pronto com ID correto, sem autoplay, sem chamadas ao YouTube antes do clique, teclado e dimensões responsivas aprovados, sem erros JavaScript. A verificação confirmou carregamento do player; não assistiu integralmente aos vídeos.
+
+## Revisão de 09/11/2026
+
+`npm test` (12 testes: inclui texto do dia-luz antes/depois da data, instrumentos ligados, toque vs. arrasto e órbita preservada no resize), `npm run build` e `npm run check:pages` aprovados com Node 22.22.2. **Sem conferência em navegador nesta revisão**: o layout de celular (barra abaixo da cena, textos ≥ 11 px, alvos ≥ 44 px), o esmaecimento da seleção, o PNG sem destaque e a rolagem com `pan-y` precisam ser vistos em 390×844 e num aparelho antes de divulgar.

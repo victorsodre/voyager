@@ -39,3 +39,14 @@ Victor autorizou aprimorar e tornar públicos os dez projetos com HTML funcional
 ## 2026-11-08 — vídeo do canal incorporado
 
 Pedido de Victor: embed abaixo do experimento e thumbnail clicável no README. Vídeo `PyF4PO5zPpk`, autoria ovictorlab confirmada pelo oEmbed público. Do lançamento aos limites do sistema solar: acompanhe a explicação e volte à sonda para conhecer seus instrumentos. Player `youtube-nocookie.com`, criado só por clique, `autoplay=0`, controles nativos, referrer de origem e link direto sempre disponível. Capa local para não carregar o YouTube na abertura; layout landscape. Cabeçalho leva à seção `#video`. Identidade preservada; nenhum upload ou alteração de vídeo no canal.
+
+## 2026-11-09 — revisão: dia-luz, instrumentos ligados, celular e SEO
+
+Victor autorizou aplicar a revisão dos dez labs.
+
+- Dia-luz: texto calculado pela data (`simulation/lightDay.ts`), sem contador. Antes de 18/11/2026 05:16:07 EST é previsão; depois, "por volta de 18/11/2026, a Voyager 1 passou de um dia-luz". Fonte: página NASA do dia-luz. Destaque também na abertura.
+- Instrumentos: magnetômetro e ondas de plasma marcados "ainda ligado" (NASA, 17/04/2026: restam esses dois); câmeras desligadas em 14/02/1990 (página da nave). Nota do RTG reescrita sem sugerir painéis solares.
+- Seleção: a caixa amarela foi trocada por esmaecimento dos outros conjuntos; o PNG exportado sai sem destaque (a malha, escolha do usuário, continua).
+- Câmera: resize/tela cheia/isolar preservam a direção da órbita. Toque no vazio não desmarca; peças finas têm tolerância de toque.
+- Celular: textos ≥ 11 px, alvos ≥ 44 px, barra de ferramentas abaixo da cena, descrição da sonda visível, rolagem vertical liberada no canvas (`touch-action: pan-y`); no desktop a roda rola a página e Ctrl + roda aproxima.
+- SEO: título com termo de busca, resumo indexável no `index.html` e JSON-LD `VideoObject` (data de envio do YouTube: 05/10/2026). Three.js em chunk separado; decodificadores Draco sem uso deixam de ser publicados.
