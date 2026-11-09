@@ -50,3 +50,11 @@ Victor autorizou aplicar a revisão dos dez labs.
 - Câmera: resize/tela cheia/isolar preservam a direção da órbita. Toque no vazio não desmarca; peças finas têm tolerância de toque.
 - Celular: textos ≥ 11 px, alvos ≥ 44 px, barra de ferramentas abaixo da cena, descrição da sonda visível, rolagem vertical liberada no canvas (`touch-action: pan-y`); no desktop a roda rola a página e Ctrl + roda aproxima.
 - SEO: título com termo de busca, resumo indexável no `index.html` e JSON-LD `VideoObject` (data de envio do YouTube: 05/10/2026). Three.js em chunk separado; decodificadores Draco sem uso deixam de ser publicados.
+
+## Segunda rodada (09/11/2026)
+
+- Enquadramento: no desktop a área da cena começa à direita da coluna de abertura (eyebrow, título, intro, destaque do dia-luz), então a haste do magnetômetro não cruza o texto em nenhuma largura; no celular a cena tem 16 px de margem lateral e a ponta da haste não encosta na borda. Entre 761 e 1100 px a dica de órbita sobe acima da faixa inferior, que quebra em três linhas.
+- Cabeçalho: "LAB" e "EXPERIMENTO" usam `labNumber('voyager')` do kit, o mesmo número do menu da coleção (hoje 04). O link para `#video` chama-se "Ver o vídeo", como nos outros labs.
+- Dicas de órbita: a de mouse ("Ctrl + rolagem") só com `pointer: fine`; a de toque só com `pointer: coarse` (CSS, sem estado em JS).
+- Ponto azul: texto alinhado à pesquisa do EP229 (PIA23645, Pale Blue Dot Revisited): ~6 bilhões de km, Terra menor que um pixel, uma das últimas imagens. Saiu "a câmera deixa de ser o centro da missão", que ia além da fonte.
+- Mapa da viagem no celular: anos do esquema com 31 unidades no SVG para ficarem com ≥ 11 px na tela.

@@ -30,6 +30,6 @@ Aplicação implementada e validada localmente; resultados em VALIDACAO.md. Sem 
 
 ## Fontes complementares conferidas
 
-- [Pale Blue Dot](https://science.nasa.gov/mission/voyager/voyager-1s-pale-blue-dot/): retrato da Terra em 14/02/1990, último conjunto de imagens da nave.
+- [Pale Blue Dot Revisited (PIA23645)](https://science.nasa.gov/photojournal/pale-blue-dot-revisited/): retrato da Terra em 14/02/1990, a cerca de 6 bilhões de km; a Terra ocupa menos de um pixel; uma das últimas imagens da nave. Texto alinhado à pesquisa do EP229 (`youtube-ovictor/episodios/ep229-voyager-ainda-nao-saiu/pesquisa.md`, consulta de 03/10/2026).
 - [Golden Record](https://science.nasa.gov/mission/voyager/voyager-golden-record-overview/): mensagem de sons/imagens; a experiência apresenta somente a capa exterior já existente no modelo.
 - [FAQ NASA](https://science.nasa.gov/mission/voyager/frequently-asked-questions/): distingue heliosfera de Sistema Solar definido pela influência gravitacional, incluindo a Nuvem de Oort. Algumas respostas da página estão desatualizadas sobre Voyager 2; não foram usadas como situação atual. O marco de 2012 é a saída da heliosfera, não do Sistema Solar inteiro.
